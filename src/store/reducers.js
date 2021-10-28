@@ -4,8 +4,8 @@ import {
 } from "./actionsTypes";
 
 const initialState = {
-  symbol: [{currencySymbol: 'AED', currencyAmount: 4.261333}],
-  request: [{rates:{AED: 4.261333}}],
+  symbol: [],
+  request: [],
 };
 
 const reducers = (state = initialState, action) => {
