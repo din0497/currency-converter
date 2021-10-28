@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Fields from "./components/Fields/Fields";
+import { useState } from "react";
+import FromTo from "./components/FromTo";
+import { AiFillPlusCircle } from "react-icons/ai";
+import { Icon } from "./styled/Styled";
 
-function App() {
+const App = () => {
+  const [vertical, setVertical] = useState([{ base: "vertical" }]);
+  const isBase = true;
+
+  const addBaseHandler = () => {
+    setVertical((prev) => [...prev, { base: "vertical" }]);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <FromTo />
+      {vertical.map((v, index) => (
+        <Fields key={index} id={index} base={vertical.base} isBase={isBase} />
+      ))}
+      <Icon onClick={addBaseHandler}>
+        <AiFillPlusCircle color={"#37ed55"} size={"35px"} />
+      </Icon>
     </div>
   );
-}
+};
 
 export default App;
