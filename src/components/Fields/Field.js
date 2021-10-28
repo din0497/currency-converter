@@ -48,7 +48,7 @@ const Field = (props) => {
     <Wrapper>
       <Select onChange={selectHandler}>
         <option value="none" selected disabled hidden>
-          Currency
+          Enter
         </option>
         {currency?.map((curr, index) => (
           <option key={index} value={curr.currencySymbol}>

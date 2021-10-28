@@ -4,12 +4,16 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 5px;
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   position: relative;
-  width: 250px;
+  width: 200px;
   height: 1px;
   padding: 19.2px 0 19.2px 19.2px;
   border: solid 2px #17a2b8;
@@ -22,7 +26,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Select = styled.select`
-  width: 120px;
+  width: 60px;
   border: none;
   outline: none;
   font-family: Arial, Helvetica, sans-serif;
@@ -70,7 +74,17 @@ export const Input = styled.input`
 `;
 
 export const Result = styled.span`
-margin-right: 5px; 
-`
+  margin-right: 5px;
+`;
+
+export const FromToContainer = styled.div`
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  @media (max-width: 500px) {
+    display: none;
+    flex-direction: column;
+  }
+`;
 
 // http://data.fixer.io/api/latest?access_key=8284e44a96c37efd88f1e34af4555bb3&base=USD
